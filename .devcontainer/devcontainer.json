@@ -3,7 +3,9 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
     // 第3回の Pi デモ・発展課題用
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+    // GitHub CLIから接続して演習を実行できるようにする
+    "ghcr.io/devcontainers/features/sshd:1": { "version": "latest" }
   },
   "containerEnv": {
     "PYDANTIC_AI_NO_BANNER": "1",
