@@ -1,0 +1,143 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 20,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130"
+  },
+  "method": "LoRA（量子化なし）",
+  "dataset": "fictional_lab_equipment_faq_v1",
+  "provenance": "Own custom-FAQ experiment executed on Colab; not instructor reference results",
+  "training": {
+    "seconds": 210.23,
+    "global_step": 40,
+    "epochs": 20.0,
+    "final_logged_loss": 0.017513011395931245,
+    "train_loss": 0.4999278638511896,
+    "log_history": [
+      {
+        "loss": 1.8567750930786133,
+        "grad_norm": 2.403515577316284,
+        "learning_rate": 0.00019618256431728194,
+        "entropy": 1.9926183849573136,
+        "num_tokens": 16010.0,
+        "mean_token_accuracy": 0.6575157701969147,
+        "epoch": 5.0,
+        "step": 10
+      },
+      {
+        "loss": 0.09950472712516785,
+        "grad_norm": 0.8055575489997864,
+        "learning_rate": 0.00013612416661871533,
+        "entropy": 0.208133739605546,
+        "num_tokens": 32020.0,
+        "mean_token_accuracy": 0.9811188191175461,
+        "epoch": 10.0,
+        "step": 20
+      },
+      {
+        "loss": 0.02591862380504608,
+        "grad_norm": 0.2407941222190857,
+        "learning_rate": 4.735678371226441e-05,
+        "entropy": 0.05801838859915733,
+        "num_tokens": 48030.0,
+        "mean_token_accuracy": 0.9936348885297775,
+        "epoch": 15.0,
+        "step": 30
+      },
+      {
+        "loss": 0.017513011395931245,
+        "grad_norm": 0.22644270956516266,
+        "learning_rate": 4.2658237049655323e-07,
+        "entropy": 0.039257263951003554,
+        "num_tokens": 64040.0,
+        "mean_token_accuracy": 0.9953296214342118,
+        "epoch": 20.0,
+        "step": 40
+      },
+      {
+        "train_runtime": 209.8349,
+        "train_samples_per_second": 1.334,
+        "train_steps_per_second": 0.191,
+        "total_flos": 199141501235712.0,
+        "train_loss": 0.4999278638511896,
+        "epoch": 20.0,
+        "step": 40
+      }
+    ],
+    "max_sequence_tokens": 244
+  },
+  "device": "Tesla T4",
+  "dataset_sizes": {
+    "train": 14,
+    "valid": 7,
+    "test": 21
+  },
+  "before": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.47619047619047616,
+    "content_rate": 0.19047619047619047,
+    "both_rate": 0.19047619047619047,
+    "seconds": 43.8
+  },
+  "after": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 1.0,
+    "both_rate": 1.0,
+    "seconds": 38.0
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "質問": "機器担当者のメールアドレスを教えてください",
+      "FAQにある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"機器担当者のメールアドレスは記載されていません\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"このFAQには記載がありません。機器担当者への確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "機器の定期点検は何か月ごとに行われますか",
+      "FAQにある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"確認が必要\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"このFAQには記載がありません。機器担当者への確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "来月新しく購入する機器は何ですか",
+      "FAQにある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"予約は研究室ポータルの「機器予約」から行います。貸出期間は最大3日です。受取は平日13:00〜17:00にB101で行います。返却先はB101です。貸出台帳に返却時刻を記録します。故障したときは使用を中止し、機器担当者に連絡します。\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"このFAQには記載がありません。機器担当者への確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "機器は何日借りられますか",
+      "FAQにある": true,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"3日\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"貸出期間は最大3日です。\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": true
+}

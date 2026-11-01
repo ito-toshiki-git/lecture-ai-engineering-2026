@@ -1,0 +1,152 @@
+{
+  "借りたい機器の予約は何から行いますか": {
+    "needs_review": false,
+    "must_include": [
+      "研究室ポータル",
+      "機器予約"
+    ]
+  },
+  "機器予約の手続きに使うサイトと欄を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "研究室ポータル",
+      "機器予約"
+    ]
+  },
+  "貸出機器の予約申請はどの窓口から行えばよいですか": {
+    "needs_review": false,
+    "must_include": [
+      "研究室ポータル",
+      "機器予約"
+    ]
+  },
+  "機器を借りられる日数の上限は何日ですか": {
+    "needs_review": false,
+    "must_include": [
+      "3日"
+    ]
+  },
+  "貸出機器の利用期間は最大で何日間ですか": {
+    "needs_review": false,
+    "must_include": [
+      "3日"
+    ]
+  },
+  "借用できる最長の日数を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "3日"
+    ]
+  },
+  "貸出機器を受け取れる曜日・時間・場所は何ですか": {
+    "needs_review": false,
+    "must_include": [
+      "平日",
+      "13:00",
+      "17:00",
+      "B101"
+    ]
+  },
+  "受取が可能な曜日と開始時刻・終了時刻・部屋を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "平日",
+      "13:00",
+      "17:00",
+      "B101"
+    ]
+  },
+  "機器を受け取る窓口の場所と受付日時はどうなっていますか": {
+    "needs_review": false,
+    "must_include": [
+      "平日",
+      "13:00",
+      "17:00",
+      "B101"
+    ]
+  },
+  "借りた機器の返却先と記録すべきことは何ですか": {
+    "needs_review": false,
+    "must_include": [
+      "B101",
+      "貸出台帳",
+      "返却時刻"
+    ]
+  },
+  "機器を返す部屋と貸出台帳に残す情報を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "B101",
+      "貸出台帳",
+      "返却時刻"
+    ]
+  },
+  "返却はどこで行い，台帳には何を書けばよいですか": {
+    "needs_review": false,
+    "must_include": [
+      "B101",
+      "貸出台帳",
+      "返却時刻"
+    ]
+  },
+  "使用中の機器が壊れたらどう対応しますか": {
+    "needs_review": false,
+    "must_include": [
+      "中止",
+      "機器担当者",
+      "連絡"
+    ]
+  },
+  "貸出機器が動かなくなったときの決まりは何ですか": {
+    "needs_review": false,
+    "must_include": [
+      "中止",
+      "機器担当者",
+      "連絡"
+    ]
+  },
+  "借りている機器に故障が生じた場合はどう行動しますか": {
+    "needs_review": false,
+    "must_include": [
+      "中止",
+      "機器担当者",
+      "連絡"
+    ]
+  },
+  "土日にもポータルで予約を申し込めますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "機器担当者の電話番号を教えてください": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "返却が遅れた場合の延滞料金はいくらですか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "返却前に充電する必要はありますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "予約が重複した場合の優先順位は何ですか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "借りられるカメラの機種名を教えてください": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  }
+}
