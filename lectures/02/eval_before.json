@@ -1,0 +1,201 @@
+{
+  "summary": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.47619047619047616,
+    "content_rate": 0.19047619047619047,
+    "both_rate": 0.19047619047619047,
+    "seconds": 43.8
+  },
+  "rows": [
+    {
+      "question": "借りたい機器の予約は何から行いますか",
+      "raw": "{\"answer\": \"研究室ポータルの「機器予約」から\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "機器予約の手続きに使うサイトと欄を教えてください",
+      "raw": "{\"answer\": \"予約は研究室ポータルの「機器予約」から行います。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "貸出機器の予約申請はどの窓口から行えばよいですか",
+      "raw": "{\"answer\": \"研究室ポータルの「機器予約」\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "機器を借りられる日数の上限は何日ですか",
+      "raw": "{\"answer\": \"3\", \"needs_review\": \"false\"}",
+      "format_ok": false,
+      "format_reason": "wrong_type",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "貸出機器の利用期間は最大で何日間ですか",
+      "raw": "{\"answer\": \"3\", \"needs_review\": \"false\"}",
+      "format_ok": false,
+      "format_reason": "wrong_type",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "借用できる最長の日数を教えてください",
+      "raw": "{\"answer\": \"3\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "貸出機器を受け取れる曜日・時間・場所は何ですか",
+      "raw": "{\"answer\": \"平日 13:00〜17:00\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "受取が可能な曜日と開始時刻・終了時刻・部屋を教えてください",
+      "raw": "{\"answer\": \"受取は平日13:00〜17:00にB101で行います。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "機器を受け取る窓口の場所と受付日時はどうなっていますか",
+      "raw": "{\"answer\": \"B101\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "借りた機器の返却先と記録すべきことは何ですか",
+      "raw": "{\"answer\": \"B101\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "機器を返す部屋と貸出台帳に残す情報を教えてください",
+      "raw": "{\"answer\": \"B101\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "返却はどこで行い，台帳には何を書けばよいですか",
+      "raw": "{\"answer\": \"B101\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "使用中の機器が壊れたらどう対応しますか",
+      "raw": "{\"answer\": \"故障したときは使用を中止し、機器担当者に連絡します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "貸出機器が動かなくなったときの決まりは何ですか",
+      "raw": "{\"answer\": \"故障したときは使用を中止し、機器担当者に連絡します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "借りている機器に故障が生じた場合はどう行動しますか",
+      "raw": "{\"answer\": \"故障したときは使用を中止し、機器担当者に連絡します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "土日にもポータルで予約を申し込めますか",
+      "raw": "{\"answer\": \"確認が必要\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "機器担当者の電話番号を教えてください",
+      "raw": "{\"answer\": \"機器担当者の電話番号は記載されていません\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "返却が遅れた場合の延滞料金はいくらですか",
+      "raw": "{\"answer\": \"確認が必要\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "返却前に充電する必要はありますか",
+      "raw": "{\"answer\": \"確認が必要\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "予約が重複した場合の優先順位は何ですか",
+      "raw": "{\"answer\": \"予約が重複した場合の優先順位は、予約が最も早いうちに予約されたもの（優先順位が高い）と、予約が最も遅いもの（優先順位が低い）のどちらか一方に優先されます。ただし、具体的には「予約が最も早いうちに予約されたもの」が優先されます。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "借りられるカメラの機種名を教えてください",
+      "raw": "{\"answer\": \"機種名は記載されていません\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    }
+  ]
+}
