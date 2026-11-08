@@ -1,0 +1,135 @@
+{
+  "date_jst": "2026-11-08T16:22:08.049644+09:00",
+  "source_commit": "ff8e7ff1ee8451fb5a6877e1966e13820692f054",
+  "python": "3.12.15",
+  "versions": {
+    "pydantic-ai-slim": "2.57.0",
+    "google-genai": "2.31.0",
+    "pytest": "9.1.1"
+  },
+  "approval_input": "検証用のy/nはスクリプトが入力した．本人の手動承認とは区別する．",
+  "runs": [
+    {
+      "name": "plain_course",
+      "module": "app.ask",
+      "args": [
+        "AIE2026の講座の宿題にある「3レベル」とは何ですか？"
+      ],
+      "stdin": "",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n[質問] AIE2026の講座の宿題にある「3レベル」とは何ですか？\n\n申し訳ありませんが、私には「AIE2026」という特定の講座やプログラムのシラバス、およびその宿題の細かな内容に直接アクセスする権限がありません。\n\nただし、AI・DX関連の教育プログラム（AIEなどが冠された講座）でよく使われる**「3レベル（3段階）」**の概念や、宿題で出される可能性が高い一般的な文脈として、以下のようなものが考えられます。\n\nもしよろしければ、講座の分野（AIプログラミング、ChatGPTなどの生成AI活用、ビジネスデータ分析など）や、その宿題の周辺の文章を少し教えていただければ、より正確な推測や解説ができるかもしれません。\n\n---\n\n### 一般的なAI関連講座で見られる「3レベル」の例\n\n#### 1. AI・生成AIの活用レベル（習熟度別）\n*   **レベル1：基本操作・調べ物（初級）**\n    *   検索の代わりにする、文章の要約や壁打ち相手にするなど、個人の効率化レベル。\n*   **レベル2：業務への組み込み・プロンプトエンジニアリング（中級）**\n    *   特定の定型業務を自動化する、テンプレート化されたプロンプトを使って質の高い出力を得るレベル。\n*   **レベル3：システム連携・高度な応用（上級）**\n    *   APIを使った自動化、Custom GPTsの作成、社内データとの連携など。\n\n#### 2. AIリテラシーや倫理のレベル\n*   **レベル1：知る・理解する**（ハルシネーションや著作権などのリスクを知る）\n*   **レベル2：気をつけて使う**（個人情報を入力しないなど、ガイドラインを守って使う）\n*   **レベル3：組織で管理・推進する**（社内ルールを策定する、他者に指導する）\n\n#### 3. プログラミングや課題解決の難易度\n*   **レベル1（基礎）：** 既存のコードやツールをそのまま動かす。\n*   **レベル2（応用）：** 目的に合わせて少しコードや条件を書き換える。\n*   **レベル3（発展・創造）：** ゼロから課題を見つけ、自分でシステムや仕組みを構築する。\n\n---\n\nもしお手元のテキストに「3レベル」の具体的な説明（例：レベル1：〇〇、レベル2：〇〇…）が載っている部分があれば、その内容を教えていただければ、その宿題で何を求められているのかを分かりやすく解説いたします！\n",
+      "stderr": "",
+      "elapsed_seconds": 3.671,
+      "files_before": {},
+      "files_after": {}
+    },
+    {
+      "name": "agent_course",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "AIE2026の講座の宿題にある「3レベル」とは何ですか？"
+      ],
+      "stdin": "",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n用語集を確認しました。「3レベル」とは、AIE2026の宿題の構成を表しています。\n\n宿題には以下の3段階（レベル）が用意されており、**どれか1つに取り組めばその回の宿題は完了**となります（原則として採点は行われません）。\n\n1. **基礎**：講義内容の確認\n2. **実装**：自分でコードを書く\n3. **発展**：調査や試行\n\n関連回：第1回\n\n--- trace ---\n[tool call]   search_glossary({'query': '3レベル'})\n[tool return] search_glossary -> [{\"term\": \"宿題の3レベル\", \"lecture\": 1, \"definition\": \"AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組…\n[usage] RunUsage(cost=Decimal('0.0007415'), details={'text_prompt_tokens': 1455}, input_text_tokens=1455, input_tokens=1455, output_tokens=122, requests=2, tool_calls=1)\n",
+      "stderr": "",
+      "elapsed_seconds": 4.185,
+      "files_before": {},
+      "files_after": {}
+    },
+    {
+      "name": "agent_lora_qlora",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "LoRAとQLoRAの違いは？"
+      ],
+      "stdin": "",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n**LoRA**と**QLoRA**の違いは、ベースモデルの重みをどのように扱うかにあります。\n\n* **LoRA（Low-Rank Adaptation）**\n  * **意味:** 低ランク適応\n  * **説明:** 事前学習済みの重みを固定したまま、重みの更新分を2つの小さな低ランク行列の積で表し、その部分だけを学習するPEFT（Parameter-Efficient Fine-Tuning：効率的なパラメータ微調整）手法です。学習するパラメータ数を大幅に減らすことができます。\n\n* **QLoRA（Quantized LoRA）**\n  * **意味:** 量子化LoRA\n  * **説明:** ベースモデルの重みを4ビットなどに量子化（ビット数を減らして軽量化）してメモリを大幅に節約した状態で固定し、その上でLoRAによる学習を行う手法です。LoRAよりもさらに少ないメモリで、より大きなモデルを扱うことができます。\n\n第2回</code>\n\n\n--- trace ---\n[tool call]   search_glossary({'query': 'LoRA'})\n[tool call]   search_glossary({'query': 'QLoRA'})\n[tool return] search_glossary -> [{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ…\n[tool return] search_glossary -> [{\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2…\n[usage] RunUsage(cost=Decimal('0.0011704'), details={'text_prompt_tokens': 1868}, input_text_tokens=1868, input_tokens=1868, output_tokens=244, requests=2, tool_calls=2)\n",
+      "stderr": "",
+      "elapsed_seconds": 4.926,
+      "files_before": {},
+      "files_after": {}
+    },
+    {
+      "name": "agent_quiz",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "第2回の内容から確認問題を1問出して"
+      ],
+      "stdin": "",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n第2回の内容から確認問題を出題します。\n\n**【確認問題】**\n「ファインチューニング」の意味や目的について説明してください。\n\n---\n（第2回）\n\n--- trace ---\n[tool call]   make_quiz({'lecture': 2})\n[tool return] make_quiz -> {\"lecture\": 2, \"question\": \"「ファインチューニング」の意味は？\", \"answer\": \"事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身に…\n[usage] RunUsage(cost=Decimal('0.0005640'), details={'text_prompt_tokens': 1430}, input_text_tokens=1430, input_tokens=1430, output_tokens=54, requests=2, tool_calls=1)\n",
+      "stderr": "",
+      "elapsed_seconds": 3.701,
+      "files_before": {},
+      "files_after": {}
+    },
+    {
+      "name": "save_denied",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "第3回の学習記録として，次の本文をそのまま保存してください．本文：エージェントではモデルが道具を選び，実行はプログラムが行う．"
+      ],
+      "stdin": "n\n",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n\n[承認待ち] save_learning_log\n保存先: /workspaces/lecture-ai-engineering-2026-lec03/learning_log\n保存する回と本文:\n{\n  \"lecture\": 3,\n  \"content\": \"エージェントではモデルが道具を選び，実行はプログラムが行う．\"\n}\nこの内容を保存しますか？ [y/N]: [拒否] この内容は保存しません．\n学習記録の保存は利用者の拒否によりキャンセルされました。そのため、保存は行っていません。\n\n（第3回）\n\n--- trace ---\n[tool call]   save_learning_log({'lecture': 3, 'content': 'エージェントではモデルが道具を選び，実行はプログラムが行う．'})\n[tool return] save_learning_log -> 利用者が保存を拒否しました．再度保存を要求しないでください．…\n[usage] RunUsage(cost=Decimal('0.0005869'), details={'text_prompt_tokens': 1423}, input_text_tokens=1423, input_tokens=1423, output_tokens=64, requests=2)\n",
+      "stderr": "",
+      "elapsed_seconds": 3.641,
+      "files_before": {},
+      "files_after": {}
+    },
+    {
+      "name": "save_approved",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "第3回の学習記録として，次の本文をそのまま保存してください．本文：エージェントではモデルが道具を選び，実行はプログラムが行う．"
+      ],
+      "stdin": "y\n",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n\n[承認待ち] save_learning_log\n保存先: /workspaces/lecture-ai-engineering-2026-lec03/learning_log\n保存する回と本文:\n{\n  \"lecture\": 3,\n  \"content\": \"エージェントではモデルが道具を選び，実行はプログラムが行う．\"\n}\nこの内容を保存しますか？ [y/N]: [承認] 保存を許可しました．\n第3回の学習記録を保存しました。\n\n第3回\n\n--- trace ---\n[tool call]   save_learning_log({'lecture': 3, 'content': 'エージェントではモデルが道具を選び，実行はプログラムが行う．'})\n[tool return] save_learning_log -> {\"status\": \"saved\", \"path\": \"learning_log/264c47ffed1c349e2d3e811cf3fd70abbbb211ebb1393c17ef6940e9eb8c1170.json\"}…\n[usage] RunUsage(cost=Decimal('0.0005684'), details={'text_prompt_tokens': 1478}, input_text_tokens=1478, input_tokens=1478, output_tokens=50, requests=2, tool_calls=1)\n",
+      "stderr": "",
+      "elapsed_seconds": 3.749,
+      "files_before": {},
+      "files_after": {
+        "264c47ffed1c349e2d3e811cf3fd70abbbb211ebb1393c17ef6940e9eb8c1170.json": {
+          "lecture": 3,
+          "content": "エージェントではモデルが道具を選び，実行はプログラムが行う．",
+          "created_at": "2026-11-08T07:22:30.975588+00:00"
+        }
+      }
+    },
+    {
+      "name": "save_duplicate",
+      "module": "app.agent",
+      "args": [
+        "--trace",
+        "第3回の学習記録として，次の本文をそのまま保存してください．本文：エージェントではモデルが道具を選び，実行はプログラムが行う．"
+      ],
+      "stdin": "y\n",
+      "returncode": 0,
+      "stdout": "[model] gemini-3.5-flash-lite\n\n[承認待ち] save_learning_log\n保存先: /workspaces/lecture-ai-engineering-2026-lec03/learning_log\n保存する回と本文:\n{\n  \"content\": \"エージェントではモデルが道具を選び，実行はプログラムが行う．\",\n  \"lecture\": 3\n}\nこの内容を保存しますか？ [y/N]: [承認] 保存を許可しました．\n第3回の学習記録を保存しました。\n\n（第3回）\n\n--- trace ---\n[tool call]   save_learning_log({'content': 'エージェントではモデルが道具を選び，実行はプログラムが行う．', 'lecture': 3})\n[tool return] save_learning_log -> {\"status\": \"already_saved\", \"path\": \"learning_log/264c47ffed1c349e2d3e811cf3fd70abbbb211ebb1393c17ef6940e9eb8c1170.json\"…\n[usage] RunUsage(cost=Decimal('0.0005740'), details={'text_prompt_tokens': 1480}, input_text_tokens=1480, input_tokens=1480, output_tokens=52, requests=2, tool_calls=1)\n",
+      "stderr": "",
+      "elapsed_seconds": 3.602,
+      "files_before": {
+        "264c47ffed1c349e2d3e811cf3fd70abbbb211ebb1393c17ef6940e9eb8c1170.json": {
+          "lecture": 3,
+          "content": "エージェントではモデルが道具を選び，実行はプログラムが行う．",
+          "created_at": "2026-11-08T07:22:30.975588+00:00"
+        }
+      },
+      "files_after": {
+        "264c47ffed1c349e2d3e811cf3fd70abbbb211ebb1393c17ef6940e9eb8c1170.json": {
+          "lecture": 3,
+          "content": "エージェントではモデルが道具を選び，実行はプログラムが行う．",
+          "created_at": "2026-11-08T07:22:30.975588+00:00"
+        }
+      }
+    }
+  ]
+}
