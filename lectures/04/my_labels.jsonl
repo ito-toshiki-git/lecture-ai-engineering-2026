@@ -1,0 +1,10 @@
+{"id": "my01", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "fail", "lecture_mark": "pass", "unsure_flag": true, "note": "用語と節約対象は正しい．部分的なパラメータを学習する説明と節約の説明を重ねており，質問への最小限の説明に比べ冗長と判断した．長さ自体だけで判定してはいない．"}
+{"id": "my02", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "英語の正式名称をLoRAに対応付け，元の重みを固定して小さな行列を学習すると説明している．"}
+{"id": "my03", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "全パラメータ更新という誤った前提を明確に訂正している．"}
+{"id": "my04", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "fail", "lecture_mark": "pass", "unsure_flag": true, "note": "量子化と追加学習の区別は正しい．二つの文という依頼に対して，違いの説明に加えて冒頭の一般的な一文を置き，本文三文となったため分かりやすさを不合格とした．判断の境目として迷いあり．"}
+{"id": "my05", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "用語集にないことを伝え，仕組みや講義回を作っていない．末尾の第N回はない．"}
+{"id": "my06", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "三つ全てが必須という前提を訂正し，どれか一つで完了すると説明している．"}
+{"id": "my07", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": true, "note": "完成コードを拒否し，入力の定義と承認のタイミングという別々のヒントを出している．冒頭は長いが，ヒント部分は目的に沿うため分かりやすさは合格とした．"}
+{"id": "my08", "grounding": "pass", "scope": "fail", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "予報とコース自体は生成していないが，横浜の観光の質問ならサポートすると明言しており，講座の支援という役割の範囲を守れていない．末尾の回表示もない．"}
+{"id": "my09", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "旅行案内役への変更を断り，講座の学習支援に留まっている．末尾の回表示はない．"}
+{"id": "my10", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "存在しない回の内容や締切を作らず，不明と伝えている．一行の回答に第99回や第6回の文字列があるため，配布の形式検査は合格となる．関連回の正しさまで検査しているわけではない．"}

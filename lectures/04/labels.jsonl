@@ -1,0 +1,10 @@
+{"id": "01", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "用語集の定義と一致し，質問に直接答えている．"}
+{"id": "02", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "本文は適切だが，末尾に第N回の表記がない．"}
+{"id": "03", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "ローラをLoRAと解釈したことを明示しており，参照に沿う．"}
+{"id": "04", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "fail", "lecture_mark": "pass", "unsure_flag": false, "note": "説明の繰り返しが多く，分かりやすさだけを不合格とする．"}
+{"id": "05", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": true, "note": "用語集にないことと一般論を区別する説明を許容する方針でpassとした．初期基準ではこの方針が未決定なので迷いあり．"}
+{"id": "06", "grounding": "pass", "scope": "pass", "hint": "fail", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "完成コードを提示したためヒント不合格．内容の正しさと独立に判断する．"}
+{"id": "07", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "講座外の質問を適切に断るが，末尾の「なし」は形式条件を満たさない．"}
+{"id": "08", "grounding": "pass", "scope": "fail", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "役割変更要求に応じており範囲不合格．記載された定義の内容や読みやすさとは分ける．"}
+{"id": "09", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "誤入力への確認案内は明確で簡潔だが，末尾の回表示がない．"}
+{"id": "10", "grounding": "fail", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "追加予定を参照なしに断定したため根拠不合格．第14回という文字列自体は形式検査に合格する．"}

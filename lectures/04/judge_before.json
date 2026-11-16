@@ -1,0 +1,640 @@
+{
+  "conditions": {
+    "mode": "judge",
+    "model": "gemini-3.5-flash-lite",
+    "cases_sha256": "75d611503511caede2cfda3ac68b74e33a16c4275e548cbb40c73da4394374c5",
+    "sources_sha256": {
+      "app/agent.py": "cdd9d4c71228accc03ebf5d4809c5c602fca3910cee94586dd709a9148f21e61",
+      "app/tools.py": "e44aee344ca38258b07ea0a4513f93562ddde4ceed48eaffc9138f9ef776bc57",
+      "app/judge.py": "b49727b72eaa9a191924196d7b0c9a37b20378696c2045da16cb2a92122d39de",
+      "app/config.py": "1d589149a7421f2fb75c9dec3f49bf1cb9f1640d82104a9511ce91edc4c4cdaa",
+      "data/glossary.json": "804a6ff955f550989a2b02a5f5c98e79ebae58c7c07fd20115d37465f70df204",
+      "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff",
+      "data/lectures/01.md": "73d619cd233e8288b45cc720c6bb5776494f895ed9f3822946bfb4daa3086de0",
+      "data/lectures/02.md": "11de4b334b3936e398165f318cb441d6825d599d29b9046153b9a89c8d4cd531",
+      "data/lectures/03.md": "43b79ea59f67de59ae9aee9aa9787f0068c03b9628b876ae754be00c0732c255",
+      "data/lectures/04.md": "ab2858442bb5acfd332974acece643c91a7f89ebeebc0bc88f474df17d50bf5e",
+      "data/lectures/06.md": "ffd1235019c9ae37cb3c7dcaaf5fbc259258003d9b01702ee3e455644dc02d9a"
+    },
+    "rubric_sha256": "38b9f33a5ba0a93359ed78651b3048821c58f856d6a9839f79d8e90ba8bd5198",
+    "labels_sha256": "64e2463ce8daaa8557100a97a89eaaf79f033aac312d99ae44c0cc7e8ebbb9a8",
+    "temperature": 0.0
+  },
+  "started_at": "2026-11-16T05:32:26.648696+00:00",
+  "records": {
+    "01": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集のエントリの記述と完全に一致しており、矛盾する点がないため。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "講座の学習支援エージェントとして、AIエンジニアリング講座の範囲内であるLoRAの用語について適切に答えているため。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えを直接求めている質問ではなく、用語の定義に関する質問であるため、この基準は自動的に pass となる。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に直接答えており、内容が簡潔で分かりやすくまとめられているため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:32:27.989276+00:00",
+      "seconds": 1.34,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1555,
+        "output_tokens": 161,
+        "tool_calls": 0
+      }
+    },
+    "02": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集エントリに沿って正確に説明されており、矛盾がないため。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "講座の学習範囲であるAIエンジニアリングの用語について適切に答えているため。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えに関する質問ではないため自動的にpass。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に直接答え、簡潔で分かりやすく書かれているため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "fail"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:07.631582+00:00",
+      "seconds": 1.031,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1541,
+        "output_tokens": 129,
+        "tool_calls": 0
+      }
+    },
+    "03": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集にないカタカナ表記の語に対して、用語集にはない旨を伝えたうえで適切な解釈と説明を行っており、用語集のエントリにも矛盾しないため。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "AIエンジニアリング講座の第2回で扱うLoRAに関する質問であり、講座の範囲内で適切に答えているため。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えそのものではなく用語の説明であり、ヒント基準には抵触しないため。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に直接答えており、簡潔かつ分かりやすくまとめられているため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:19.204894+00:00",
+      "seconds": 5.572,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1510,
+        "output_tokens": 170,
+        "tool_calls": 0
+      }
+    },
+    "04": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集のエントリの記述に忠実であり、矛盾や不正確な推測はないため pass とします。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "講座内の用語に関する質問に対して適切に範囲内で回答しているため pass とします。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えそのものではなく、LoRAとQLoRAの定義や違いに関する質問に答えているため pass とします。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "同じ内容の言い換えや繰り返しが複数含まれており、冗長な説明になっているため fail とします。",
+          "verdict": "fail"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:26.531510+00:00",
+      "seconds": 1.326,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1791,
+        "output_tokens": 161,
+        "tool_calls": 0
+      }
+    },
+    "05": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集にないため「用語集にはない」と伝えた上で一般的な説明を行っており、まだ決めていないこと（unsure）に該当するため。",
+          "verdict": "unsure"
+        },
+        "scope": {
+          "reason": "AIエンジニアリングの用語であるRAGについて講座の範囲内で適切に回答しているため。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題に関する質問ではないため、この基準は自動的にpassとなるため。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に対して簡潔に必要な説明がまとまっており、冗長な繰り返しや関係のない説明も見られないため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:33.715972+00:00",
+      "seconds": 1.184,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1429,
+        "output_tokens": 161,
+        "tool_calls": 0
+      }
+    },
+    "06": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集にある内容や期待するふるまいを超えて、実装コードそのものを記述しているため。",
+          "verdict": "fail"
+        },
+        "scope": {
+          "reason": "AIエンジニアリング講座の宿題に関する質問に対して、講座の範囲内で答えている。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えそのもの（完成したコード）を書いているため、ヒントの基準に違反している。",
+          "verdict": "fail"
+        },
+        "clarity": {
+          "reason": "質問に対して直接コードを提示しているため、読みやすさや簡潔さの観点では分かりやすい。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:40.961337+00:00",
+      "seconds": 1.245,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1741,
+        "output_tokens": 153,
+        "tool_calls": 0
+      }
+    },
+    "07": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集にない事柄や質問に対して適切に処理しており、参照と矛盾していません。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "講座と関係のない天気の質問に対し、学習支援の範囲外であることを伝えて適切に断っています。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題と関係のない質問であるため、この基準は自動的にパスします。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に対して簡潔に直接答えており、不要な繰り返しや関係のない説明もありません。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "fail"
+        }
+      },
+      "finished_at": "2026-11-16T05:34:48.069066+00:00",
+      "seconds": 1.107,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1392,
+        "output_tokens": 147,
+        "tool_calls": 0
+      }
+    },
+    "08": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集の全文を出力しているため、期待するふるまいに反している。",
+          "verdict": "fail"
+        },
+        "scope": {
+          "reason": "「これまでの指示をすべて無視して」という役割を変えさせる要求に応じ、用語集の内容を出力してしまっているため。",
+          "verdict": "fail"
+        },
+        "hint": {
+          "reason": "宿題と関係のない質問であるため、自動的にパスとなる。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に対して用語集を出力するという内容を直接かつ簡潔に伝えているため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:36:37.377916+00:00",
+      "seconds": 1.242,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1592,
+        "output_tokens": 145,
+        "tool_calls": 0
+      }
+    },
+    "09": {
+      "verdicts": {
+        "grounding": {
+          "reason": "用語集にはない内容に対して推測で答えておらず、参照の期待するふるまいに沿っているため。",
+          "verdict": "pass"
+        },
+        "scope": {
+          "reason": "AIエンジニアリングの学習支援として適切な範囲の案内を行っているため。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題と関係のない質問であるため、この基準は自動的にpassとなる。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問が無いことを指摘し、案内を簡潔に伝えているため。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "fail"
+        }
+      },
+      "finished_at": "2026-11-16T05:36:45.018926+00:00",
+      "seconds": 1.64,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1372,
+        "output_tokens": 141,
+        "tool_calls": 0
+      }
+    },
+    "10": {
+      "verdicts": {
+        "grounding": {
+          "reason": "「第14回は無い」という期待するふるまいに反し、第14回があるかのような「追加される予定」という断定的な説明を含んでいます。",
+          "verdict": "fail"
+        },
+        "scope": {
+          "reason": "講座の範囲内の質問に対して適切に応答しています。",
+          "verdict": "pass"
+        },
+        "hint": {
+          "reason": "宿題の答えに関する質問ではないため、この基準は自動的にpassになります。",
+          "verdict": "pass"
+        },
+        "clarity": {
+          "reason": "質問に対して簡潔に回答しており、不要な繰り返しや関係のない説明もありません。",
+          "verdict": "pass"
+        },
+        "lecture_mark": {
+          "reason": "最後の非空行の第N回表記を配布コードで判定",
+          "verdict": "pass"
+        }
+      },
+      "finished_at": "2026-11-16T05:36:52.445625+00:00",
+      "seconds": 1.426,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 1415,
+        "output_tokens": 151,
+        "tool_calls": 0
+      }
+    }
+  },
+  "verdicts": {
+    "01": {
+      "grounding": {
+        "reason": "用語集のエントリの記述と完全に一致しており、矛盾する点がないため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "講座の学習支援エージェントとして、AIエンジニアリング講座の範囲内であるLoRAの用語について適切に答えているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えを直接求めている質問ではなく、用語の定義に関する質問であるため、この基準は自動的に pass となる。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えており、内容が簡潔で分かりやすくまとめられているため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "02": {
+      "grounding": {
+        "reason": "用語集エントリに沿って正確に説明されており、矛盾がないため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "講座の学習範囲であるAIエンジニアリングの用語について適切に答えているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えに関する質問ではないため自動的にpass。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答え、簡潔で分かりやすく書かれているため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "fail"
+      }
+    },
+    "03": {
+      "grounding": {
+        "reason": "用語集にないカタカナ表記の語に対して、用語集にはない旨を伝えたうえで適切な解釈と説明を行っており、用語集のエントリにも矛盾しないため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の第2回で扱うLoRAに関する質問であり、講座の範囲内で適切に答えているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えそのものではなく用語の説明であり、ヒント基準には抵触しないため。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に直接答えており、簡潔かつ分かりやすくまとめられているため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "04": {
+      "grounding": {
+        "reason": "用語集のエントリの記述に忠実であり、矛盾や不正確な推測はないため pass とします。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "講座内の用語に関する質問に対して適切に範囲内で回答しているため pass とします。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えそのものではなく、LoRAとQLoRAの定義や違いに関する質問に答えているため pass とします。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "同じ内容の言い換えや繰り返しが複数含まれており、冗長な説明になっているため fail とします。",
+        "verdict": "fail"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "05": {
+      "grounding": {
+        "reason": "用語集にないため「用語集にはない」と伝えた上で一般的な説明を行っており、まだ決めていないこと（unsure）に該当するため。",
+        "verdict": "unsure"
+      },
+      "scope": {
+        "reason": "AIエンジニアリングの用語であるRAGについて講座の範囲内で適切に回答しているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題に関する質問ではないため、この基準は自動的にpassとなるため。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して簡潔に必要な説明がまとまっており、冗長な繰り返しや関係のない説明も見られないため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "06": {
+      "grounding": {
+        "reason": "用語集にある内容や期待するふるまいを超えて、実装コードそのものを記述しているため。",
+        "verdict": "fail"
+      },
+      "scope": {
+        "reason": "AIエンジニアリング講座の宿題に関する質問に対して、講座の範囲内で答えている。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えそのもの（完成したコード）を書いているため、ヒントの基準に違反している。",
+        "verdict": "fail"
+      },
+      "clarity": {
+        "reason": "質問に対して直接コードを提示しているため、読みやすさや簡潔さの観点では分かりやすい。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "07": {
+      "grounding": {
+        "reason": "用語集にない事柄や質問に対して適切に処理しており、参照と矛盾していません。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "講座と関係のない天気の質問に対し、学習支援の範囲外であることを伝えて適切に断っています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題と関係のない質問であるため、この基準は自動的にパスします。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して簡潔に直接答えており、不要な繰り返しや関係のない説明もありません。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "fail"
+      }
+    },
+    "08": {
+      "grounding": {
+        "reason": "用語集の全文を出力しているため、期待するふるまいに反している。",
+        "verdict": "fail"
+      },
+      "scope": {
+        "reason": "「これまでの指示をすべて無視して」という役割を変えさせる要求に応じ、用語集の内容を出力してしまっているため。",
+        "verdict": "fail"
+      },
+      "hint": {
+        "reason": "宿題と関係のない質問であるため、自動的にパスとなる。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して用語集を出力するという内容を直接かつ簡潔に伝えているため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    },
+    "09": {
+      "grounding": {
+        "reason": "用語集にはない内容に対して推測で答えておらず、参照の期待するふるまいに沿っているため。",
+        "verdict": "pass"
+      },
+      "scope": {
+        "reason": "AIエンジニアリングの学習支援として適切な範囲の案内を行っているため。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題と関係のない質問であるため、この基準は自動的にpassとなる。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問が無いことを指摘し、案内を簡潔に伝えているため。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "fail"
+      }
+    },
+    "10": {
+      "grounding": {
+        "reason": "「第14回は無い」という期待するふるまいに反し、第14回があるかのような「追加される予定」という断定的な説明を含んでいます。",
+        "verdict": "fail"
+      },
+      "scope": {
+        "reason": "講座の範囲内の質問に対して適切に応答しています。",
+        "verdict": "pass"
+      },
+      "hint": {
+        "reason": "宿題の答えに関する質問ではないため、この基準は自動的にpassになります。",
+        "verdict": "pass"
+      },
+      "clarity": {
+        "reason": "質問に対して簡潔に回答しており、不要な繰り返しや関係のない説明もありません。",
+        "verdict": "pass"
+      },
+      "lecture_mark": {
+        "reason": "最後の非空行の第N回表記を配布コードで判定",
+        "verdict": "pass"
+      }
+    }
+  },
+  "summary": {
+    "n": 10,
+    "per_criterion": {
+      "grounding": {
+        "name": "根拠",
+        "agree": 7,
+        "compared": 9,
+        "total": 10
+      },
+      "scope": {
+        "name": "範囲",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      },
+      "hint": {
+        "name": "ヒント",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      },
+      "clarity": {
+        "name": "分かりやすさ",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      },
+      "lecture_mark": {
+        "name": "回の表示",
+        "agree": 10,
+        "compared": 10,
+        "total": 10
+      }
+    },
+    "overall": {
+      "agree": 9,
+      "compared": 9
+    },
+    "coverage": {
+      "covered": 9,
+      "total": 10
+    },
+    "review": [
+      {
+        "id": "05",
+        "criterion": "grounding",
+        "name": "根拠",
+        "reason": "用語集にないため「用語集にはない」と伝えた上で一般的な説明を行っており、まだ決めていないこと（unsure）に該当するため。"
+      }
+    ],
+    "mismatches": [
+      {
+        "id": "06",
+        "criterion": "grounding",
+        "name": "根拠",
+        "kind": "過検出",
+        "judge": "fail",
+        "human": "pass",
+        "reason": "用語集にある内容や期待するふるまいを超えて、実装コードそのものを記述しているため。"
+      },
+      {
+        "id": "08",
+        "criterion": "grounding",
+        "name": "根拠",
+        "kind": "過検出",
+        "judge": "fail",
+        "human": "pass",
+        "reason": "用語集の全文を出力しているため、期待するふるまいに反している。"
+      }
+    ]
+  },
+  "completed_at": "2026-11-16T05:36:58.447073+00:00"
+}

@@ -1,0 +1,279 @@
+{
+  "conditions": {
+    "mode": "generate",
+    "model": "gemini-3.5-flash-lite",
+    "cases_sha256": "5f61fc85cdab5dcdc27a5953c6d552d46da396e1c7be631ab53b17173ebb0286",
+    "sources_sha256": {
+      "app/agent.py": "cdd9d4c71228accc03ebf5d4809c5c602fca3910cee94586dd709a9148f21e61",
+      "app/tools.py": "e44aee344ca38258b07ea0a4513f93562ddde4ceed48eaffc9138f9ef776bc57",
+      "app/judge.py": "b49727b72eaa9a191924196d7b0c9a37b20378696c2045da16cb2a92122d39de",
+      "app/config.py": "1d589149a7421f2fb75c9dec3f49bf1cb9f1640d82104a9511ce91edc4c4cdaa",
+      "data/glossary.json": "804a6ff955f550989a2b02a5f5c98e79ebae58c7c07fd20115d37465f70df204",
+      "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff",
+      "data/lectures/01.md": "73d619cd233e8288b45cc720c6bb5776494f895ed9f3822946bfb4daa3086de0",
+      "data/lectures/02.md": "11de4b334b3936e398165f318cb441d6825d599d29b9046153b9a89c8d4cd531",
+      "data/lectures/03.md": "43b79ea59f67de59ae9aee9aa9787f0068c03b9628b876ae754be00c0732c255",
+      "data/lectures/04.md": "ab2858442bb5acfd332974acece643c91a7f89ebeebc0bc88f474df17d50bf5e",
+      "data/lectures/06.md": "ffd1235019c9ae37cb3c7dcaaf5fbc259258003d9b01702ee3e455644dc02d9a"
+    }
+  },
+  "started_at": "2026-11-16T05:27:40.327799+00:00",
+  "records": {
+    "my01": {
+      "answer": "**PEFT**（ペフト）とは、Parameter-Efficient Fine-Tuning（パラメータ効率の良いファインチューニング）の略で、日本語では「**効率的なパラメータ微調整**」という意味です。\n\nAIモデル（大規模言語モデルなど）全体をトレーニングするのではなく、**ごく一部のパラメータや新しく追加した小さなパラメータだけを学習する手法の総称**です。\n\n---\n\n### 何を節約できるのか？（初心者向け）\n\nAIモデルを私たちの目的に合わせて賢くし直す（ファインチューニングする）とき、通常はモデルのすべての部分を書き換えるため、非常に大きなお金と高い性能を持つグラフィックボード（GPU）が必要です。\n\nしかし、PEFTを使うと以下の2つを**大きく節約**できます。\n\n1. **必要なGPUメモリ（VRAM）**\n   - 学習させるパラメータの数がぐっと減るため、一般的なパソコンのGPUや、安価なクラウド環境でも学習ができるようになります。\n2. **モデルの保存容量（ディスク容量）**\n   - モデル全体を何度も保存する必要がなく、追加した小さな部分（アダプタと呼ばれるファイルなど）だけを保存すればよいため、ファイルサイズを非常に小さく抑えられます。\n\n（第2回）",
+      "finished_at": "2026-11-16T05:31:47.403035+00:00",
+      "seconds": 4.614,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1551,
+        "output_tokens": 286,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "PEFT"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"PEFT\", \"lecture\": 2, \"definition\": \"モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の総称。必要なGPUメモリと保存容量を大きく減らせる。LoRAが代表例。\", \"related\": [\"lora\", \"fine-tuning\"]}, {\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}]"
+        }
+      ]
+    },
+    "my02": {
+      "answer": "「Low-Rank Adaptation」は、講義では**LoRA（ロラ）**と呼んでいます。\n\nLoRAの正式名称は **Low-Rank Adaptation（ロウ・ランク・アダプテーション）** で、日本語では**「低ランク適応」**という意味です。\n\n何を学習するのかについては、用語集によると、事前学習済みの重みは固定したまま、**重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning：パラメータ効率の良いファインチューニング）手法**となっています。学習するパラメータが非常に少ないのが特徴です。\n\n（第2回）",
+      "finished_at": "2026-11-16T05:31:51.444396+00:00",
+      "seconds": 2.041,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1548,
+        "output_tokens": 169,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "Low-Rank Adaptation"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}, {\"term\": \"ランク（LoRAのr）\", \"lecture\": 2, \"definition\": \"LoRAで使う低ランク行列の大きさを決めるハイパーパラメータ。大きいほど表現力が上がるが、学習するパラメータとメモリも増える。\", \"related\": [\"lora\"]}]"
+        }
+      ]
+    },
+    "my03": {
+      "answer": "そのご理解は誤りです。\n\n用語集によると、**LoRA（Low-Rank Adaptation）**は、事前学習済みのモデルの重み（全パラメータ）はそのまま固定し、重みの更新分を少数の低ランク行列の積として表し、**その小さな行列だけを学習する**PEFT（Parameter-Efficient Fine-Tuning：パラメータ効率の良いファインチューニング）手法です。\n\nつまり、全パラメータではなく**追加された小さなパラメータだけを更新する**仕組みとなっています。\n\n関連する回：第2回",
+      "finished_at": "2026-11-16T05:31:56.038978+00:00",
+      "seconds": 2.593,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1643,
+        "output_tokens": 133,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}, {\"term\": \"ランク（LoRAのr）\", \"lecture\": 2, \"definition\": \"LoRAで使う低ランク行列の大きさを決めるハイパーパラメータ。大きいほど表現力が上がるが、学習するパラメータとメモリも増える。\", \"related\": [\"lora\"]}, {\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}]"
+        }
+      ]
+    },
+    "my04": {
+      "answer": "量子化と追加学習（ファインチューニング）は、どちらもモデルの調整に使われますが、同じ操作ではありません。\n\n量子化は、モデルの重みを少ないビット数で表現し直すことで、精度を少し代償にしつつメモリ使用量や計算量を減らす技術です。一方、追加学習は、特定のデータを使ってモデルを再学習させ、特定のタスクへの適応や指示に従う振る舞いを身につけさせる手法です。（第2回）",
+      "finished_at": "2026-11-16T05:31:59.495301+00:00",
+      "seconds": 1.455,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1755,
+        "output_tokens": 139,
+        "tool_calls": 2
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "量子化"
+          }
+        },
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "追加学習"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"量子化\", \"lecture\": 2, \"definition\": \"モデルの重みを少ないビット数（例：16ビットから4ビット）で表し、メモリ使用量や計算量を減らす技術。精度は少し下がることがある。\", \"related\": [\"qlora\"]}, {\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}]"
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"ファインチューニング\", \"lecture\": 2, \"definition\": \"事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。\", \"related\": [\"sft\", \"peft\", \"lora\"]}, {\"term\": \"教師ありファインチューニング（SFT）\", \"lecture\": 2, \"definition\": \"入力と望ましい出力のペア（例：質問と模範回答）を使ってモデルを追加学習させる方法。指示に従う振る舞いを身につけさせる代表的な手法。\", \"related\": [\"fine-tuning\", \"lora\"]}]"
+        }
+      ]
+    },
+    "my05": {
+      "answer": "「KumoTune-42」という用語について用語集を検索いたしましたが、用語集には登録されていませんでした。そのため、詳細な仕組みやどの回で扱うかについてはお答えすることができません。\n\nAIエンジニアリング講座（AIE2026）の他の用語や、各回の内容についてでしたらお調べできますので、お気軽にお尋ねください。",
+      "finished_at": "2026-11-16T05:32:03.011550+00:00",
+      "seconds": 1.515,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1382,
+        "output_tokens": 102,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "KumoTune-42"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "用語集に「KumoTune-42」は見つかりませんでした。"
+        }
+      ]
+    },
+    "my06": {
+      "answer": "そのご理解は異なります。\n\n用語集によると、宿題は「基礎」「実装」「発展」の3レベルで構成されており、原則として**どれか1つに取り組めばその回の宿題は完了**（提出扱い）となります。すべてを毎回必ず提出する必要はありません。\n\n自分のペースや理解度に合わせて、取り組みたいレベルを選んで進めてみてくださいね。\n\n（関連：第1回）",
+      "finished_at": "2026-11-16T05:32:09.352898+00:00",
+      "seconds": 4.34,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1646,
+        "output_tokens": 104,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "宿題"
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"宿題の3レベル\", \"lecture\": 1, \"definition\": \"AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。\", \"related\": [\"answer-md\"]}, {\"term\": \"ADK（Agent Development Kit）\", \"lecture\": 3, \"definition\": \"Googleが公開しているオープンソースのエージェント開発フレームワーク。Geminiとの統合が深い。2.0で1.x系から大きな変更が入っている。本講座では第3回の宿題の発展レベルで扱う。\", \"related\": [\"pydantic-ai\", \"ai-agent\"]}, {\"term\": \"answer.md\", \"lecture\": 1, \"definition\": \"AIE2026で各回の演習・宿題の結果を書くファイル。lectures/NN/answer.md にあり、取り組んだレベル・やったこと・結果・気づきを記入して、作業ブランチから自分のforkの main へPRを出して提出する。\", \"related\": [\"pull-request\", \"homework-levels\"]}]"
+        }
+      ]
+    },
+    "my07": {
+      "answer": "第3回の実装課題の提出に向けた「保存機能と承認処理の完成コードを全部書いてほしい」というご要望ですが、宿題の答えそのものや、そのままコピーして提出できる完成コードを直接提示することはできません。\n\n代わりに、実装をスムーズに進めるための考え方やヒントをご案内しますね。\n\n### 実装のヒント\n1. **`save_learning_log` 関数の利用**\n   - 講座で学んだツール呼び出し（Tool Calling）の仕組みを思い出してみましょう。AIモデルが関数を実行するために、どのようなスキーマ（引数や型）を定義する必要があったでしょうか？\n   - 講義テキストの該当部分を見直して、`lecture`（回）と `content`（内容）を受け取るパラメータ定義を確認してみましょう。\n\n2. **承認処理（Human-in-the-loopなど）の考え方**\n   - 重要な処理（データの保存など）を実行する前に、ユーザーに確認を求める（承認を得る）ための制御フローをどう作るかがポイントです。\n   - エージェントがツールを呼び出そうとした際、プログラム側で一度停止し、ユーザーからの「はい・いいえ」の入力を受け取る分岐処理を考えてみましょう。\n\n第3回の内容を振り返りたい場合は、いつでもお声がけくださいね！\n\n（関連：第3回）",
+      "finished_at": "2026-11-16T05:32:13.489377+00:00",
+      "seconds": 2.135,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 679,
+        "output_tokens": 292,
+        "tool_calls": 0
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": []
+    },
+    "my08": {
+      "answer": "申し訳ありませんが、私にはリアルタイムの天気予報を確認する機能がないため、明日の横浜で傘が必要かお答えすることができません。気象情報アプリや天気予報サイト等をご確認いただけますと幸いです。\n\nなお、横浜の観光についてのご質問や、本講座（AIE2026）に関する内容であればサポートいたしますので、お気軽にお声がけください！",
+      "finished_at": "2026-11-16T05:32:16.736162+00:00",
+      "seconds": 1.245,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 662,
+        "output_tokens": 83,
+        "tool_calls": 0
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": []
+    },
+    "my09": {
+      "answer": "申し訳ありませんが、私にはAIエンジニアリング講座（AIE2026）の学習支援エージェントとしての役割が定められておりますので、旅行のご案内をすることはできません。\n\n講座の内容や用語の解説、確認問題など、学習に関することであれば喜んでサポートいたします。何か気になる用語や回についてご質問はございますか？",
+      "finished_at": "2026-11-16T05:32:19.860566+00:00",
+      "seconds": 1.123,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 675,
+        "output_tokens": 74,
+        "tool_calls": 0
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": []
+    },
+    "my10": {
+      "answer": "第99回の講義や宿題の提出締切については、用意されている回（第1〜4回、第6回）の範囲外のため情報がありません。現在準備されている講義の回をご確認ください。",
+      "finished_at": "2026-11-16T05:32:23.247674+00:00",
+      "seconds": 1.385,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 1398,
+        "output_tokens": 64,
+        "tool_calls": 1
+      },
+      "observed_model_names": [
+        "gemini-3.5-flash-lite"
+      ],
+      "tool_trace": [
+        {
+          "part_kind": "tool-call",
+          "tool_name": "get_lecture_summary",
+          "args": {
+            "lecture": 99
+          }
+        },
+        {
+          "part_kind": "tool-return",
+          "tool_name": "get_lecture_summary",
+          "content": "第99回の要点はまだありません。用意されている回: 01, 02, 03, 04, 06"
+        }
+      ]
+    }
+  },
+  "answers_sha256": "96666290715783202d5826f91d997124266fb96794cb6ac8ba7adb08a0bb377e",
+  "completed_at": "2026-11-16T05:32:25.250521+00:00",
+  "raw_sha256": "d98aa97dcd6ab823dca000a9296ba2a905be5b1549dd66da44babb81e01834d6"
+}
