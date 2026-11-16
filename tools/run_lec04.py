@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from pydantic_ai.usage import UsageLimits
+from pydantic_ai.exceptions import ModelHTTPError
 
 from app import judge
 from app.config import MODEL
@@ -97,4 +98,20 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # 回数制限・一時的な混雑だけを再試行する．保存済みの問題はmain内で飛ばす．
+    for attempt in range(4):
+        try:
+            main()
+            break
+        except ModelHTTPError as exc:
+            if exc.status_code not in (429, 503) or attempt == 3:
+                raise
+            delay = 40 + 10 * attempt
+            event = {"at": datetime.now(timezone.utc).isoformat(), "status": exc.status_code,
+                     "retry_in_seconds": delay, "attempt": attempt + 1}
+            event_path = Path("lectures/04/runtime_events.jsonl")
+            event_path.parent.mkdir(parents=True, exist_ok=True)
+            with event_path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(event) + "\n")
+            print(f"一時的な接続エラー {exc.status_code}．{delay}秒後に保存済み結果から再開します．", flush=True)
+            time.sleep(delay)
