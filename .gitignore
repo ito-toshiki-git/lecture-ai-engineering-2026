@@ -10,5 +10,8 @@ __pycache__/
 # 個人の学習ログ（第3回の宿題で作成）は共有しない
 learning_log/
 
+# 第4回: 詳細な通信記録は手元に置き，確認に必要な実行証跡だけを共有する
+lectures/04/generation_result.json
+
 # macOS
 .DS_Store
