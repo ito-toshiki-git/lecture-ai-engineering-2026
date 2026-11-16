@@ -78,7 +78,7 @@ def main():
             record["verdicts"]["lecture_mark"] = {
                 "reason": "最後の非空行の第N回表記を配布コードで判定",
                 "verdict": judge.check_lecture_mark(c["answer"])}
-        usage = result.usage()
+        usage = result.usage
         record.update(finished_at=datetime.now(timezone.utc).isoformat(), seconds=round(time.perf_counter()-start, 3),
                       usage={k: getattr(usage, k) for k in ["requests", "input_tokens", "output_tokens", "tool_calls"]})
         data["records"][c["id"]] = record
